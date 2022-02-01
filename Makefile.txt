@@ -1,0 +1,49 @@
+JAVAC=/usr/bin/javac
+.SUFFIXES: .java .class
+
+SRCDIR=src/
+BINDIR=bin/
+
+
+.PHONY: docs
+
+all:
+	javac -d bin $(SRCDIR)*.java
+
+clean:
+	rm ${BINDIR}*.class
+
+run1:
+	java -cp bin/ Flow "largesample_in.txt"
+
+
+
+run2:
+	java -cp bin/ FlowPanel "largesample_in.txt" 
+
+
+
+
+run3:
+	java -cp bin/ Terrain "largesample_in.txt"
+
+
+
+
+run4:
+        java -cp bin/ TempleRun "largesample_in.txt"
+
+
+
+
+run5:
+	java -cp bin/ GridTings "largesample_in.txt"
+
+
+
+
+docs:
+	javadoc -d docs/ src/*.java
+
+cleandocs:
+	rm -r docs/*
